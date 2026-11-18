@@ -1,0 +1,53 @@
+{
+	"name": "tspl-label-kit",
+	"version": "0.1.0",
+	"description": "Print anything you can draw on a canvas to TSPL thermal label printers over USB, with no vendor driver.",
+	"license": "MIT",
+	"author": "Direk Sethi",
+	"type": "module",
+	"engines": {
+		"node": ">=20"
+	},
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		},
+		"./node": {
+			"types": "./dist/node.d.ts",
+			"default": "./dist/node.js"
+		}
+	},
+	"bin": {
+		"tspl-label": "./dist/cli.js"
+	},
+	"files": [
+		"dist",
+		"examples",
+		"README.md",
+		"LICENSE"
+	],
+	"scripts": {
+		"build": "tsc -p tsconfig.build.json",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run",
+		"prepublishOnly": "npm run typecheck && npm test && npm run build"
+	},
+	"keywords": [
+		"tspl",
+		"label-printer",
+		"thermal-printer",
+		"gprinter",
+		"xprinter",
+		"bitmap",
+		"canvas",
+		"usb"
+	],
+	"devDependencies": {
+		"@types/node": "^22.0.0",
+		"typescript": "^5.6.0",
+		"vitest": "^3.0.0"
+	}
+}
