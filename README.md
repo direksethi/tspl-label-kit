@@ -23,7 +23,7 @@ Requires Node 20 or later.
 The package is not published to npm yet. Install it from a checkout:
 
 ```sh
-git clone <this repository>
+git clone https://github.com/direksethi/tspl-label-kit.git
 cd tspl-label-kit
 npm install
 npm run build
